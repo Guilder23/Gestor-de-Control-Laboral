@@ -52,12 +52,29 @@ input {
 
 /* Secciones de Entradas y Salidas */
 .registro-section {
-    background: white;
-    padding: 15px;
+    background:#212b36;
+    padding: 1px 15px ;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/*Registro entrada*/
+.registro_entrada{
+    margin: 0px;
+    border: 0;
+    padding: none;
+    background-color: #61ca6f;
+    border-radius: 15px 0 0 15px;
+    text-align: center;
 
+}
+/*Registro salida*/
+.registro_salida{
+    margin: 0px;
+    border: 0;
+    background-color: #a8424f;
+    border-radius: 0 15px 15px 0;
+
+}
 /* Lista de usuarios */
 .registro-list {
     display: flex;
@@ -94,9 +111,21 @@ input {
 }
 .info p {
     padding: 1px;
-    margin: none;
+    margin: 0;
+    border: 0;
     font-size: 14px;
 }
+.NombreUsuario {
+    font-size: 24px; /* Tamaño de letra más grande */
+    font-weight: bold; /* Negrita */
+    color: #06a706; /* Amarillo brillante */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Sombra negra para resaltar */
+    background-color: transparent; /* Fondo llamativo */
+    padding: 5px 10px; /* Espaciado alrededor del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    display: inline-block; /* Ajusta el tamaño al contenido */
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
