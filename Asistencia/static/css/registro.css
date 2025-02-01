@@ -1,0 +1,106 @@
+/* Contenedor del formulario */
+.registro-wrapper {
+    background: #212b36;
+    padding: 30px 50px;
+    border-radius: 12px;
+    box-shadow: 1px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 520px;
+    text-align: center;
+    margin: 5px auto;
+}
+
+/* Título del formulario */
+.registro-titulo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    text-shadow: 0px 2px 4px white;
+}
+
+/* Grid para dos columnas */
+.registro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+/* Campos de formulario */
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+/* Estilo de etiquetas */
+.campo label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #a3a0a0;
+    margin-bottom: 5px;
+}
+
+/* Inputs y selects */
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border-color: #312f2f;
+    box-shadow: 0px 0px 7px rgba(10, 10, 10, 0.3);
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover y focus */
+.campo input:focus,
+.campo select:focus {
+    background-color: #524e4e;
+    border-color: #0066ff;
+    box-shadow: 0px 5px 7px rgba(0, 102, 255, 0.3);
+}
+
+/* Botón de registro */
+.boton-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    grid-column: span 2;
+}
+
+.registro-boton {
+    background: linear-gradient(90deg, #0066ff, #0044cc);
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+    font-weight: 600;
+}
+
+.registro-boton:hover {
+    background: linear-gradient(90deg, #0044cc, #002999);
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .registro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .boton-contenedor {
+        grid-column: span 1;
+    }
+
+    .registro-wrapper {
+        width: 95%;
+    }
+}
