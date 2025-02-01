@@ -1,0 +1,150 @@
+.perfil-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 1px;
+    margin-top:1px ;
+    background: transparent;
+}
+
+.perfil-grande {
+    width: 200px;
+    height: 440px;
+    padding: 20px;
+    border-radius: 15px 0 0 15px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #212b36;
+    text-align: center;
+}
+.perfil-grande img{
+    border-radius: 50px 50px 0 0;
+    width: 190px;
+    height: 300px;
+}
+.perfil-card {
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+.perfil-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgb(23, 23, 29);
+    border-radius: 15px 15px 0 0;
+}
+
+.perfil-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #740633;
+    box-shadow: 0px 5px 7px rgba(0, 102, 255, 0.3);
+    object-fit: cover;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.form-group label {
+    display: flex;
+    display:inline-flexbox;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.perfil-botones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-guardar, .btn-cerrar {
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn-guardar {
+    background: #6a11cb;
+    color: white;
+}
+
+.btn-guardar:hover {
+    background: #4a0fa8;
+}
+
+.btn-cerrar {
+    background: #d9534f;
+    color: white;
+}
+
+.btn-cerrar:hover {
+    background: #c9302c;
+}
+
+@media (max-width: 1024px) {
+    .perfil-container {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .perfil-grande {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 15px 15px 0 0;
+        padding: 15px;
+    }
+
+    .perfil-card {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 0 0 15px 15px;
+        padding: 20px;
+    }
+}
+
