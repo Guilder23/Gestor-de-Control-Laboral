@@ -1,14 +1,68 @@
-
-
 {% extends 'home.html' %}
 
 {% block title %}Registro{% endblock %}
 
 {% block content %}
-    <H2>Registro de usuario</H2>
-    <form method="POST" enctype="multipart/form-data">
+<div class="registro-wrapper">
+    <h2 class="registro-titulo">Registro de Usuario</h2>
+    <form method="POST" enctype="multipart/form-data" class="registro-formulario">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Registrarse</button>
+        
+        <div class="registro-grid">
+            <div class="campo">
+                {{ form.username.label_tag }}
+                {{ form.username }}
+            </div>
+
+            <div class="campo">
+                {{ form.apellidos.label_tag }}
+                {{ form.apellidos }}
+            </div>
+
+            <div class="campo">
+                {{ form.genero.label_tag }}
+                {{ form.genero }}
+            </div>
+
+            <div class="campo">
+                {{ form.cargo.label_tag }}
+                {{ form.cargo }}
+            </div>
+
+            <div class="campo">
+                {{ form.correo_electronico.label_tag }}
+                {{ form.correo_electronico }}
+            </div>
+
+            <div class="campo">
+                {{ form.numero_carnet.label_tag }}
+                {{ form.numero_carnet }}
+            </div>
+
+            <div class="campo">
+                {{ form.celular.label_tag }}
+                {{ form.celular }}
+            </div>
+
+            <div class="campo">
+                {{ form.foto_perfil.label_tag }}
+                {{ form.foto_perfil }}
+            </div>
+
+            <div class="campo">
+                {{ form.password1.label_tag }}
+                {{ form.password1 }}
+            </div>
+
+            <div class="campo">
+                {{ form.password2.label_tag }}
+                {{ form.password2 }}
+            </div>
+        </div>
+
+        <div class="boton-contenedor">
+            <button type="submit" class="registro-boton">Registrarse</button>
+        </div>
     </form>
+</div>
 {% endblock %}
