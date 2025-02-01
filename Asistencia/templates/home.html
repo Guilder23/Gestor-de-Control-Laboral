@@ -10,6 +10,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
     <link rel="stylesheet" href="{% static 'css/reloj.css' %}">
     <link rel="stylesheet" href="{% static 'css/entrada_salida.css' %}">
     <link rel="stylesheet" href="{% static 'css/usuarios.css' %}">
@@ -23,10 +24,9 @@
         {% include "barra_navegacion.html" %}
     </div>
 
-    <div id="reloj"></div>
-
     <div class="content">
         {% block content %}
+             <div id="reloj"></div>
             {% include "entrada_salida.html" %}
             {% include 'barra_izquierda.html' %}
         {% endblock %}

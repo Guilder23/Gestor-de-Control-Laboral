@@ -1,45 +1,71 @@
-
-
 {% extends 'home.html' %}
 
 {% block title %}Perfil{% endblock %}
 
 {% block content %}
-<h2>Perfil de {{ usuario.username }}</h2>
-<form method="post">
-    {% csrf_token %}
-    <label>Apellidos:</label>
-    <input type="text" name="apellidos" value="{{ usuario.apellidos }}">
-    
-    <label>Género:</label>
-    <select name="genero">
-        <option value="M" {% if usuario.genero == 'M' %}selected{% endif %}>Masculino</option>
-        <option value="F" {% if usuario.genero == 'F' %}selected{% endif %}>Femenino</option>
-        <option value="O" {% if usuario.genero == 'O' %}selected{% endif %}>Otro</option>
-    </select>
-    
-    <label>Cargo:</label>
-    <select name="cargo">
-        <option value="B" {% if usuario.cargo == 'B' %}selected{% endif %}>Becado</option>
-        <option value="P" {% if usuario.cargo == 'P' %}selected{% endif %}>Promotor</option>
-        <option value="JZ" {% if usuario.cargo == 'JZ' %}selected{% endif %}>Jefe de Zona</option>
-    </select>
-    
-    <label>Correo electrónico:</label>
-    <input type="email" name="correo_electronico" value="{{ usuario.correo_electronico }}">
-    
-    <label>Número de carnet:</label>
-    <input type="text" name="numero_carnet" value="{{ usuario.numero_carnet }}">
-    
-    <label>Celular:</label>
-    <input type="text" name="celular" value="{{ usuario.celular }}">
-    
-    <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" alt="Foto de perfil" width="150">
+<div class="perfil-container">
+    <div class="perfil-grande">
+        <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" 
+             alt="Foto de perfil" class="perfil-foto">
+        <h2>{{ usuario.username }}</h2>
+        <p>Esta es tu cuenta donde puedes ver tu informacion, editar y actualizar tus datos</p>
+    </div>
+    <div class="perfil-card">
+        <div class="perfil-header">
+            <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" 
+                 alt="Foto de perfil" class="perfil-foto">
+            <h2>{{ usuario.username }}</h2>
+        </div>
 
+        <form method="post" class="perfil-form">
+            {% csrf_token %}
 
-    <button type="submit">Guardar cambios</button>
-    <a href="{% url 'cerrar_sesion' %}">Cerrar Sesión</a>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Apellidos:</label>
+                    <input type="text" name="apellidos" value="{{ usuario.apellidos }}">
+                </div>
+                <div class="form-group">
+                    <label>Género:</label>
+                    <select name="genero">
+                        <option value="M" {% if usuario.genero == 'M' %}selected{% endif %}>Masculino</option>
+                        <option value="F" {% if usuario.genero == 'F' %}selected{% endif %}>Femenino</option>
+                        <option value="O" {% if usuario.genero == 'O' %}selected{% endif %}>Otro</option>
+                    </select>
+                </div>
+            </div>
 
-</form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Cargo:</label>
+                    <select name="cargo">
+                        <option value="B" {% if usuario.cargo == 'B' %}selected{% endif %}>Becado</option>
+                        <option value="P" {% if usuario.cargo == 'P' %}selected{% endif %}>Promotor</option>
+                        <option value="JZ" {% if usuario.cargo == 'JZ' %}selected{% endif %}>Jefe de Zona</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico:</label>
+                    <input type="email" name="correo_electronico" value="{{ usuario.correo_electronico }}">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Número de carnet:</label>
+                    <input type="text" name="numero_carnet" value="{{ usuario.numero_carnet }}">
+                </div>
+                <div class="form-group">
+                    <label>Celular:</label>
+                    <input type="text" name="celular" value="{{ usuario.celular }}">
+                </div>
+            </div>
+
+            <div class="perfil-botones">
+                <button type="submit" class="btn-guardar">Guardar cambios</button>
+                <a href="{% url 'cerrar_sesion' %}" class="btn-cerrar">Cerrar Sesión</a>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
-
