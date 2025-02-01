@@ -1,7 +1,4 @@
 
-
-
-
     <!-- Contenedor principal de REGISTROS -->
     <div class="container">
             {% if messages %}
@@ -32,15 +29,17 @@
             
             <!-- Sección de Entradas -->
             <div class="registro-section">
-                <h2>Usuarios en Entrada <ion-icon name="log-in-outline"></ion-icon></h2>
+                <div class="registro_entrada">
+                    <h2>Usuarios en Entrada <ion-icon name="log-in-outline"></ion-icon></h2>
+                </div>
                 <div class="registro-list">
                     {% for registro in entradas %}
                         <div class="card">
                             <img src="{% if registro.usuario.foto_perfil %}{{ registro.usuario.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" alt="Foto de perfil">
                             <div class="info">
-                                <p><strong>{{ registro.usuario.username }}</strong></p>
-                                <p>Hora de entrada: {{ registro.hora_entrada }}</p>
-                                <p>Tiempo Transcurrido: 
+                                <p><strong class="NombreUsuario"> {{ registro.usuario.username }}</strong></p>
+                                <p> <strong> Hora de entrada: </strong>{{ registro.hora_entrada }}</p>
+                                <p> <strong>Tiempo Transcurrido: </strong>
                                     <span class="tiempo-transcurrido" data-hora-entrada="{{ registro.hora_entrada|date:'Y-m-d H:i:s' }}"></span>
                                 </p>
                             </div>
@@ -53,7 +52,9 @@
 
             <!-- Sección de Salidas -->
             <div class="registro-section">
-                <h2>Usuarios en Salida <ion-icon name="log-out-outline"></ion-icon></h2>
+                <div class="registro_salida">
+                    <h2>Usuarios en Salida <ion-icon name="log-out-outline"></ion-icon></h2>
+                </div>
                 <div class="registro-list">
                     {% for registro in salidas %}
                         <div class="card">
