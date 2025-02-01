@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+
+{% block title %}Usuarios Registrados{% endblock %}
+{% block content %}
+    <div class="contenedor-usuarios">
+        <h2>Usuarios Registrados</h2>
+        <div class="lista-usuarios">
+            {% for usuario in usuarios %}
+                <div class="tarjeta-usuario">
+                    <img src="{% if usuario.foto_perfil %}{{ usuario.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" alt="Foto de perfil">
+                    <div class="informacion-usuario">
+                        <p><strong>{{ usuario.username }}</strong></p>
+                    </div>
+                </div>
+            {% empty %}
+                <p class="mensaje-vacio">No hay usuarios registrados.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% load static %}
+
+<!-- Ícono para mostrar/ocultar el menú -->
+<div class="menu-icon" id="menuToggle">
+    <ion-icon name="menu-outline"></ion-icon>
+</div>
+
+<!-- Menú lateral -->
+<div class="menu-container" id="sideMenu">
+    <h2>Menú</h2>
+    <nav class="side-menu">
+        <div>
+            <h4>Descargar Todo el REPORTE</h4>
+            <a href="{% url 'reporte_asistencia_excel' %}" class="btn btn-success">Descargar Excel</a>
+            <a href="{% url 'reporte_asistencia' %}" class="btn btn-primary">Descargar PDF</a>
+            
+            <form method="GET" action="{% url 'reporte_asistencia' %}">
+                <label for="fecha_inicio">Desde:</label>
+                <input type="date" name="fecha_inicio" required>
+            
+                <label for="fecha_fin">Hasta:</label>
+                <input type="date" name="fecha_fin" required>
+            
+                <a><button type="submit">Generar Reporte</button></a>
+            </form>
+        </div>
+    </nav>
+</div>
+

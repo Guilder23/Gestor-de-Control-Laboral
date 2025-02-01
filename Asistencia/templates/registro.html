@@ -1,0 +1,14 @@
+
+
+{% extends 'home.html' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+    <H2>Registro de usuario</H2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Registrarse</button>
+    </form>
+{% endblock %}

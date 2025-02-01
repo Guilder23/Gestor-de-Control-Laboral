@@ -1,0 +1,77 @@
+
+
+
+
+    <!-- Contenedor principal de REGISTROS -->
+    <div class="container">
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        <!-- Formulario en fila -->
+        <div class="form-container">
+            <form method="POST" action="{% url 'registrar_entrada' %}">
+                {% csrf_token %}
+                <input type="text" name="numero_carnet" placeholder="Número de carnet" required>
+                <button type="submit" class="btn">Registrar Entrada <ion-icon name="arrow-down-outline"></ion-icon> </button>
+            </form>
+
+            <form method="POST" action="{% url 'registrar_salida' %}">
+                {% csrf_token %}
+                <input type="text" name="numero_carnet" placeholder="Número de carnet" required>
+                <input type="text" name="descripcion" placeholder="Descripción del trabajo realizado" required>
+                <button type="submit" class="btn">Registrar Salida <ion-icon name="arrow-up-outline"></ion-icon> </button>
+            </form>
+        </div>
+
+        <!-- Secciones de Entradas y Salidas -->
+        <div class="registro-container">
+            
+            <!-- Sección de Entradas -->
+            <div class="registro-section">
+                <h2>Usuarios en Entrada <ion-icon name="log-in-outline"></ion-icon></h2>
+                <div class="registro-list">
+                    {% for registro in entradas %}
+                        <div class="card">
+                            <img src="{% if registro.usuario.foto_perfil %}{{ registro.usuario.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" alt="Foto de perfil">
+                            <div class="info">
+                                <p><strong>{{ registro.usuario.username }}</strong></p>
+                                <p>Hora de entrada: {{ registro.hora_entrada }}</p>
+                                <p>Tiempo Transcurrido: 
+                                    <span class="tiempo-transcurrido" data-hora-entrada="{{ registro.hora_entrada|date:'Y-m-d H:i:s' }}"></span>
+                                </p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No hay usuarios en entrada trabajando.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Sección de Salidas -->
+            <div class="registro-section">
+                <h2>Usuarios en Salida <ion-icon name="log-out-outline"></ion-icon></h2>
+                <div class="registro-list">
+                    {% for registro in salidas %}
+                        <div class="card">
+                            <img src="{% if registro.usuario.foto_perfil %}{{ registro.usuario.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" alt="Foto de perfil">
+                            <div class="info">
+                                <p><strong>{{ registro.usuario.username }}</strong></p>
+                                <p>Hora de salida: {{ registro.hora_salida }}</p>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No hay usuarios en salida.</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    

@@ -1,0 +1,175 @@
+/* Botón del menú */
+.menu-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #1e3c76;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 95px;
+    left: 10px;
+    z-index: 1100;
+    cursor: pointer;
+    box-shadow: 1px 3px 5px 1px rgba(14, 13, 13, 0.2);
+    transition: all 0.3s ease; /* Transición para efectos */
+}
+
+/* Icono dentro del botón */
+.menu-icon ion-icon {
+    color: white;
+    font-size: 25px;
+    transition: color 0.3s ease; 
+}
+
+/* Efecto cuando el mouse está encima (hover) */
+.menu-icon:hover {
+    background-color: #194288; /* Color de fondo más claro */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
+    transform: scale(1); /* Aumenta ligeramente el tamaño */
+    border: 0.01px solid rgb(119, 149, 231);
+}
+
+/* Efecto cuando el botón está activo (presionado) */
+.menu-icon:active {
+    background-color: #1e3c72; /* Color de fondo cuando se presiona */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+    transform: scale(1); /* Restablece el tamaño al ser presionado */
+    transition: transform 0.1s ease; /* Transición rápida para el clic */
+}
+
+/* Cambio de color del icono cuando está presionado */
+.menu-icon:active ion-icon {
+    color: #e0e0e0; /* Cambia el color del icono cuando se hace clic */
+}
+
+
+/* Menú lateral */
+.menu-container {
+    position: fixed;
+    top: 15%;
+    left: -170px;
+    width: 150px;
+    height: 100vh;
+    background: #333333;
+    padding: 10px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 2;
+}
+
+.menu-container.open {
+    left: 0;
+}
+
+.menu-container h2 {
+    color: white;
+    margin-top: 40%;
+}
+
+.side-menu div {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu li {
+    margin-bottom: 15px;
+}
+/* Estilos para el botón */
+.side-menu a {
+    position: relative;
+    overflow: hidden; /* Oculta las gotas que salgan fuera del botón */
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    padding: 8px;
+    margin: 5px;
+    display: block;
+    border-radius: 5px;
+    background-color: #1e3c72;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto de gota en hover y active */
+.side-menu a:hover::before,
+.side-menu a:active::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: splash 0.6s ease-out forwards;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Animación de las gotas de agua */
+@keyframes splash {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* Efecto de "splash" de gotas pequeñas que aparecen en diferentes lugares */
+.side-menu a:hover::after,
+.side-menu a:active::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: small-splash 0.8s ease-out infinite;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation-delay: 0.3s; /* Retrasa la aparición de las gotas pequeñas */
+}
+
+/* Animación de las gotas pequeñas */
+@keyframes small-splash {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translate(calc(-50% + 20px), calc(-50% + 20px)) scale(0.5);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(calc(-50% - 20px), calc(-50% - 20px)) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Efecto de cambio de color al pasar el ratón */
+.side-menu a:hover {
+    background-color: #2a5298; /* Color de fondo más claro para el hover */
+}
+
+/* Sombra adicional para dar más profundidad */
+.side-menu a {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+/* Sombra al pasar el ratón */
+.side-menu a:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
