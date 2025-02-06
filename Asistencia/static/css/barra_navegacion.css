@@ -11,8 +11,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 30px;
-    position: relative;
+    padding: 10px 30px;
+    position: fixed;
+    top:0;
+    width: 95%;
 }
 
 /* Logo */
@@ -29,6 +31,7 @@ body {
     font-size: 24px;
     color: white;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 /* Menú de navegación */
@@ -65,7 +68,7 @@ body {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 0;
+        right: 10px;
         width: 200px;
         height: 600px;
         background: #333;
