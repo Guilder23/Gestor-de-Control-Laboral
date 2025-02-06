@@ -19,7 +19,7 @@
             <form method="POST" action="{% url 'registrar_salida' %}">
                 {% csrf_token %}
                 <input type="text" name="numero_carnet" placeholder="Número de carnet" required>
-                <input type="text" name="descripcion" placeholder="Descripción del trabajo realizado" required>
+                <textarea name="descripcion" placeholder="Descripción del trabajo realizado" required></textarea>
                 <button type="submit" class="btn">Registrar Salida <ion-icon name="arrow-up-outline"></ion-icon> </button>
             </form>
         </div>
@@ -52,7 +52,7 @@
 
             <!-- Sección de Salidas -->
             <div class="registro-section">
-                <div class="registro_salida">
+                <div class="registro_salida"> 
                     <h2>Usuarios en Salida <ion-icon name="log-out-outline"></ion-icon></h2>
                 </div>
                 <div class="registro-list">
