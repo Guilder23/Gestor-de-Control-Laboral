@@ -1,7 +1,7 @@
-
 <nav class="navbar">
     <div class="logo">Sistema de Asistencia</div>
-    <ul>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links">
         <li><a href="{% url 'home' %}">Inicio</a></li>
         <li><a href="{% url 'usuarios' %}">Usuarios</a></li>
         <li><a href="{% url 'registro' %}">Registro</a></li>
