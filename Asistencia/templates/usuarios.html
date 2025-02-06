@@ -4,12 +4,21 @@
 {% block content %}
     <div class="contenedor-usuarios">
         <h2>Usuarios Registrados</h2>
+
+        <!-- Filtro de cargos -->
+        <div class="filtro-cargos">
+            <button class="filtro-btn" data-cargo="B">Becados</button>
+            <button class="filtro-btn" data-cargo="L">Licenciados</button>
+            <button class="filtro-btn" data-cargo="Jz">Jefe de Zona</button>
+            <button class="filtro-btn" data-cargo="all">Mostrar Todos</button>
+        </div>
+
         <div class="lista-usuarios">
             {% for usuario in usuarios %}
-                <div class="tarjeta-usuario">
+                <div class="tarjeta-usuario" data-cargo="{{ usuario.cargo }}">
                     <img src="{% if usuario.foto_perfil %}{{ usuario.foto_perfil.url }}{% else %}/static/default-profile.jpg{% endif %}" alt="Foto de perfil">
                     <div class="informacion-usuario">
-                        <p><strong>{{ usuario.username }}</strong></p>
+                        <p><strong>{{ usuario.cargo }}: {{ usuario.username }}</strong></p>
                     </div>
                 </div>
             {% empty %}

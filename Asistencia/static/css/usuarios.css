@@ -8,6 +8,24 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+/*Filtros*/
+.filtro-cargos {
+    margin-bottom: 20px;
+}
+
+.filtro-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filtro-btn:hover {
+    background-color: #ffcc00;
+}
 
 /* Título */
 .contenedor-usuarios h2 {
