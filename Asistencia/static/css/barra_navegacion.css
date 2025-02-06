@@ -3,7 +3,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
+.content{
+    margin: 95px auto auto auto;
+}
 /* Barra de navegación */
 .navbar {
     background: #333;
